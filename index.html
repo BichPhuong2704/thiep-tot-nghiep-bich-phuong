@@ -253,7 +253,7 @@
       class="mr-3 px-3 py-1 max-w-[210px] bg-white/95 backdrop-blur-md text-hcmou font-semibold rounded-full shadow-md border border-sky-100 transition-all flex items-center gap-1.5 font-handwriting text-base hover:bg-sky-mist">
       <span id="music-label" class="truncate">Chọn nhạc nền</span>
       <span id="music-label-icon" class="animate-pulse shrink-0">🎵</span>
-      <i data-lucide="chevron-up" class="w-3.5 h-3.5 shrink-0"></i>
+      <span id="music-chevron" class="shrink-0"><i data-lucide="chevron-up" class="w-3.5 h-3.5"></i></span>
     </button>
     <button id="music-toggle-btn" type="button" aria-label="Phát / tạm dừng nhạc"
       class="relative w-12 h-12 rounded-full bg-slate-900 border-2 border-white shadow-xl flex items-center justify-center transition-transform active:scale-90 hover:scale-105 focus:outline-none">
@@ -1028,8 +1028,9 @@
      * - src: đường dẫn file mp3 (đặt trong thư mục music/)
      * - start / end (giây): chỉ phát đoạn từ start đến end rồi lặp lại.
      *   Để end: null nếu muốn phát cả bài.
+     * - hidden: true để ẩn bài khỏi menu (bỏ dòng này để hiện lại)
      */
-    const MUSIC_TRACKS = [
+    const ALL_MUSIC_TRACKS = [
       {
         title: 'A Little Dream Of Me',
         note: 'Thảo Tâm ft. Công Dương ♡',
@@ -1042,9 +1043,11 @@
         note: 'Nhạc dạo đầu – Chillies ☀️',
         src: 'music/dai-lo-mat-troi.mp3',
         start: 0,
-        end: 36 // chỉ lặp đoạn dạo đầu (0–36s)
+        end: 36, // chỉ lặp đoạn dạo đầu (0–36s)
+        hidden: true
       }
     ];
+    const MUSIC_TRACKS = ALL_MUSIC_TRACKS.filter(t => !t.hidden);
     const MUSIC_STORAGE_KEY = 'hcmou_music_track';
 
     let isPlaying = false;
@@ -1066,9 +1069,13 @@
 
     function initAudio() {
       musicToggleBtn.addEventListener('click', toggleMusic);
+      // Chỉ còn 1 bài thì bấm nhãn = phát/tạm dừng, không cần menu
+      const hasMenu = MUSIC_TRACKS.length > 1;
+      document.getElementById('music-chevron').classList.toggle('hidden', !hasMenu);
       musicTooltip.addEventListener('click', (e) => {
         e.stopPropagation();
-        toggleMusicMenu();
+        if (hasMenu) toggleMusicMenu();
+        else toggleMusic();
       });
       document.addEventListener('click', (e) => {
         if (!document.getElementById('music-widget').contains(e.target)) closeMusicMenu();
