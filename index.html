@@ -967,7 +967,17 @@
       'anh-giap': { name: 'Anh Giáp', you: 'anh', self: 'em' },
       'chi-yen': { name: 'Chị Yến', you: 'chị', self: 'em' },
       'gia-dinh-puka': { name: 'Gia đình Puka', you: 'cả nhà', self: 'em' },
-      'anh-nghia-chi-thuy': { name: 'Anh Nghĩa & Chị Thủy', you: 'anh chị', self: 'em' }
+      'anh-nghia-chi-thuy': { name: 'Anh Nghĩa & Chị Thủy', you: 'anh chị', self: 'em' },
+
+      // Bạn bè: giữ xưng "mình – bạn" như bản gốc, chỉ thêm tên người nhận
+      'minh-truc': { name: 'Minh Trúc', you: 'bạn', self: 'ban' },
+      'thuy-duong': { name: 'Thùy Dương', you: 'bạn', self: 'ban' },
+      'thuy-tien': { name: 'Thủy Tiên', you: 'bạn', self: 'ban' },
+      'tra-my': { name: 'Trà My', you: 'bạn', self: 'ban' },
+      'nhu-hang': { name: 'Như Hằng', you: 'bạn', self: 'ban' },
+      'ngoc-hoa': { name: 'Ngọc Hòa', you: 'bạn', self: 'ban' },
+      'hong-nhung': { name: 'Hồng Nhung', you: 'bạn', self: 'ban' },
+      'mai-phuong': { name: 'Mai Phương', you: 'bạn', self: 'ban' }
     };
 
     // {you} = cách gọi người nhận, {You} = viết hoa đầu câu, {name} = tên đầy đủ, {guest} = tên trong form
@@ -1024,6 +1034,11 @@
         modalTitle: 'Em cảm ơn {you} nhiều lắm!',
         modalYes: 'Em đã nhận được xác nhận của <strong>{guest}</strong> rồi. Hẹn gặp {you} ở Lễ Tốt Nghiệp nha! ♡',
         modalNo: 'Em tiếc lắm vì {you} bận, nhưng em cảm ơn <strong>{guest}</strong> đã gửi lời chúc cho em nha! ♡'
+      },
+      // Bộ "bạn": câu nào không có ở đây thì giữ nguyên chữ của bản bạn bè gốc
+      ban: {
+        envRecipient: 'Gửi {name} ♡',
+        letterTitle: 'Gửi {name} thân thương của mình ♡'
       }
     };
 
