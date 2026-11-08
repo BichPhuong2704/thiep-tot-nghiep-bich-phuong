@@ -230,7 +230,7 @@
     <div class="absolute right-10 bottom-24 opacity-60">
       <div class="bg-white/80 p-3 rounded-2xl shadow-lg border border-sky-100 rotate-[6deg] max-w-[170px] text-center">
         <span class="text-2xl">💐</span>
-        <p class="font-handwriting text-hcmou font-bold text-lg leading-tight mt-1">Cảm ơn vì đã luôn ở bên mình!</p>
+        <p data-p="gutterThanks" class="font-handwriting text-hcmou font-bold text-lg leading-tight mt-1">Cảm ơn vì đã luôn ở bên mình!</p>
       </div>
     </div>
   </div>
@@ -334,13 +334,14 @@
         <!-- Handwritten Recipient Intro -->
         <div class="my-5 relative w-full">
           <div class="h-[1px] bg-sky-100 w-full mb-3"></div>
+          <p data-p="envRecipient" class="hidden font-handwriting text-xl text-slate-600 mb-1"></p>
           <p class="font-script text-2xl sm:text-3xl text-hcmou font-bold leading-relaxed">
             Thư mời tốt nghiệp từ <br>
             <span
               class="text-3xl sm:text-4xl text-hcmou-light font-script tracking-wide underline decoration-sky-pastel decoration-wavy decoration-2">Bích
               Phượng</span> ♡
           </p>
-          <p class="font-handwriting text-base sm:text-lg text-slate-600 mt-2">
+          <p data-p="envQuote" class="font-handwriting text-base sm:text-lg text-slate-600 mt-2">
             "Cảm ơn vì đã luôn là một phần tươi đẹp trong thanh xuân của mình!"
           </p>
           <div class="h-[1px] bg-sky-100 w-full mt-3"></div>
@@ -445,25 +446,25 @@
 
           <div class="pl-5">
             <div class="flex items-center justify-between mb-2">
-              <span class="font-handwriting text-xl sm:text-2xl font-bold text-hcmou">Gửi bạn bè và những người thương
+              <span data-p="letterTitle" class="font-handwriting text-xl sm:text-2xl font-bold text-hcmou">Gửi bạn bè và những người thương
                 yêu nhất ♡</span>
               <span
                 class="text-[10px] font-montserrat px-2 py-0.5 bg-sky-mist text-hcmou rounded-md font-semibold shrink-0">Lời
                 Ngỏ</span>
             </div>
 
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-sans">
+            <p data-p="letterP1" class="text-xs sm:text-sm text-slate-600 leading-relaxed font-sans">
               Thấm thoát 4 năm thanh xuân dưới mái trường Đại học Mở TP.HCM đã trôi qua thật nhanh. Hôm nay mình đã
               chính thức cầm trên tay chiếc mũ cử nhân và tấm bằng tốt nghiệp Ngành Ngôn ngữ Anh rồi nè!
             </p>
-            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-sans mt-2">
+            <p data-p="letterP2" class="text-xs sm:text-sm text-slate-600 leading-relaxed font-sans mt-2">
               Ngày tốt nghiệp của mình sẽ trọn vẹn và nhiều niềm vui hơn biết bao khi có bạn bè và những người thương
               quý cùng có mặt để chung vui. Tụi mình cùng gặp nhau, chụp thật nhiều bức hình kỷ niệm rạng rỡ và lưu lại
               những khoảnh khắc đáng nhớ nhất nhé! Rất mong được đón tiếp bạn nha ♡
             </p>
 
             <div class="mt-4 flex justify-end items-center gap-2">
-              <span class="text-xs text-slate-400 font-sans italic">Thương mến,</span>
+              <span data-p="letterSign" class="text-xs text-slate-400 font-sans italic">Thương mến,</span>
               <span class="font-script text-2xl font-bold text-hcmou">Bích Phượng ♡</span>
             </div>
           </div>
@@ -480,7 +481,7 @@
         <p class="text-[11px] font-bold uppercase tracking-widest text-hcmou font-montserrat mb-1">
           ĐẾM NGƯỢC ĐẾN KHOẢNH KHẮC TỐT NGHIỆP
         </p>
-        <p class="font-handwriting text-xl text-slate-500 mb-3">
+        <p data-p="countdownSub" class="font-handwriting text-xl text-slate-500 mb-3">
           Tụi mình sắp gặp nhau rồi nè!
         </p>
 
@@ -527,7 +528,7 @@
               <i data-lucide="calendar" class="w-4 h-4 text-hcmou"></i>
               Thời Gian & Lịch Sự Kiện
             </h3>
-            <p class="font-handwriting text-slate-500 text-lg">Đừng quên đánh dấu lịch hẹn với Phượng nhé ♡</p>
+            <p data-p="calSub" class="font-handwriting text-slate-500 text-lg">Đừng quên đánh dấu lịch hẹn với Phượng nhé ♡</p>
           </div>
           <span class="text-2xl">🗓️</span>
         </div>
@@ -566,7 +567,7 @@
                 <i data-lucide="graduation-cap" class="w-4 h-4 text-hcmou"></i>
               </div>
               <h5 class="text-sm font-bold text-slate-800 mt-2 font-montserrat">Lễ Trao Bằng Tốt Nghiệp</h5>
-              <p class="text-xs text-slate-500 mt-1 leading-snug">
+              <p data-p="ceremonyDesc" class="text-xs text-slate-500 mt-1 leading-snug">
                 Nghi thức trang trọng tại Hội trường A (Lầu 1). Phượng sẽ nhận bằng cử nhân trên sân khấu hội trường.
               </p>
             </div>
@@ -678,7 +679,7 @@
             <i data-lucide="map-pin" class="w-4 h-4 text-hcmou"></i>
             Địa Điểm Tổ Chức
           </h3>
-          <p class="font-handwriting text-slate-500 text-lg">Cơ sở chính của trường mình nè ♡</p>
+          <p data-p="mapSub" class="font-handwriting text-slate-500 text-lg">Cơ sở chính của trường mình nè ♡</p>
         </div>
 
         <!-- Venue Info Card with School Logo -->
@@ -729,7 +730,7 @@
             <i data-lucide="sparkles" class="w-4 h-4 text-hcmou"></i>
             Lưu Ý Nhỏ Cho Buổi Lễ
           </h3>
-          <p class="font-handwriting text-slate-500 text-lg">Một vài điều nhỏ xíu nhắn gửi đến bạn nè ♡</p>
+          <p data-p="notesSub" class="font-handwriting text-slate-500 text-lg">Một vài điều nhỏ xíu nhắn gửi đến bạn nè ♡</p>
         </div>
 
         <div class="bg-white rounded-2xl p-5 border border-sky-100 shadow-sm space-y-3.5 relative overflow-hidden">
@@ -754,7 +755,7 @@
               <span class="text-xl shrink-0">🪭</span>
               <div>
                 <strong class="text-amber-900 font-semibold block text-xs sm:text-sm">Quạt cầm tay mini tránh nóng:</strong>
-                <p class="text-xs text-slate-500 mt-0.5 leading-relaxed">
+                <p data-p="noteFan" class="text-xs text-slate-500 mt-0.5 leading-relaxed">
                   Buổi lễ sẽ khá đông và thời tiết có thể hơi oi bức, bạn nhớ mang theo quạt cầm tay nhỏ gọn để tránh nóng nhé.
                 </p>
               </div>
@@ -765,7 +766,7 @@
               <span class="text-xl shrink-0">💖</span>
               <div>
                 <strong class="text-rose-600 font-semibold block text-xs sm:text-sm">Tình yêu thương dành cho Bích Phượng:</strong>
-                <p class="text-xs text-slate-500 mt-0.5 leading-relaxed">
+                <p data-p="noteLove" class="text-xs text-slate-500 mt-0.5 leading-relaxed">
                   Và điều quan trọng nhất: Hãy mang theo nụ cười thật tươi cùng tình cảm yêu thương đến chung vui với Phượng nha! Sự hiện diện của bạn chính là món quà to bự và ý nghĩa nhất rồi ♡
                 </p>
               </div>
@@ -776,7 +777,7 @@
               <span class="text-xl shrink-0">🚗</span>
               <div>
                 <strong class="text-slate-700 font-semibold block text-xs sm:text-sm">Vị trí gửi xe:</strong>
-                <p class="text-xs text-slate-500 mt-0.5 leading-relaxed">
+                <p data-p="noteParking" class="text-xs text-slate-500 mt-0.5 leading-relaxed">
                   Bạn có thể gửi xe tại hầm xe trường (cổng 97 Võ Văn Tần) hoặc bãi giữ xe đối diện (số 96 Võ Văn Tần).
                 </p>
               </div>
@@ -794,14 +795,14 @@
             <i data-lucide="check-circle" class="w-4 h-4 text-hcmou"></i>
             Xác Nhận Tham Dự (RSVP)
           </h3>
-          <p class="font-handwriting text-slate-500 text-lg">Để Bích Phượng chuẩn bị đón tiếp bạn chu đáo nhất nhé ♡</p>
+          <p data-p="rsvpSub" class="font-handwriting text-slate-500 text-lg">Để Bích Phượng chuẩn bị đón tiếp bạn chu đáo nhất nhé ♡</p>
         </div>
 
         <div class="bg-white rounded-2xl p-5 border border-sky-100 shadow-sm space-y-4">
           <form id="rsvp-form" onsubmit="handleRsvpSubmit(event)">
             <!-- Attendance Radio Selection -->
             <div class="space-y-2">
-              <label class="text-xs font-semibold text-slate-700 block">Bạn có đến chung vui cùng mình không?</label>
+              <label data-p="rsvpQ" class="text-xs font-semibold text-slate-700 block">Bạn có đến chung vui cùng mình không?</label>
               <div class="grid grid-cols-2 gap-2">
                 <label
                   class="flex items-center gap-2 p-2.5 rounded-xl border border-sky-200 bg-sky-mist/30 cursor-pointer hover:bg-sky-mist transition-colors">
@@ -811,14 +812,14 @@
                 <label
                   class="flex items-center gap-2 p-2.5 rounded-xl border border-slate-200 bg-slate-50 cursor-pointer hover:bg-slate-100 transition-colors">
                   <input type="radio" name="rsvp_status" value="no" class="text-slate-400 focus:ring-slate-400">
-                  <span class="text-xs font-medium text-slate-600">Rất tiếc, mình bận 🥺</span>
+                  <span data-p="rsvpNo" class="text-xs font-medium text-slate-600">Rất tiếc, mình bận 🥺</span>
                 </label>
               </div>
             </div>
 
             <!-- Guest Name -->
             <div class="mt-3 space-y-1">
-              <label for="rsvp-name" class="text-xs font-semibold text-slate-700 block">Họ và tên của bạn: <span
+              <label data-p="rsvpNameLabel" for="rsvp-name" class="text-xs font-semibold text-slate-700 block">Họ và tên của bạn: <span
                   class="text-rose-500">*</span></label>
               <input type="text" id="rsvp-name" required placeholder="Ví dụ: Hoàng Tuấn Anh / Gia đình chị Vy..."
                 class="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-xs sm:text-sm focus:outline-none focus:border-hcmou focus:ring-1 focus:ring-hcmou bg-slate-50/50">
@@ -858,7 +859,7 @@
           </div>
 
           <!-- Mô tả -->
-          <p class="font-handwriting text-base text-slate-600 text-center leading-relaxed mb-3">
+          <p data-p="supportText" class="font-handwriting text-base text-slate-600 text-center leading-relaxed mb-3">
             Khi bạn đến, hãy liên hệ số dưới đây để được hỗ trợ nhé! 🤍
           </p>
 
@@ -899,7 +900,7 @@
         <!-- Hand-drawn Speech Bubble -->
         <div
           class="relative bg-white p-4 rounded-2xl shadow-sm border border-sky-100 max-w-[340px] mx-auto text-center">
-          <p class="font-handwriting text-xl text-hcmou font-bold leading-snug">
+          <p data-p="footerBubble" class="font-handwriting text-xl text-hcmou font-bold leading-snug">
             "Sự hiện diện của bạn là niềm vinh hạnh lớn của mình trong ngày trọng đại này!" ♡
           </p>
           <div
@@ -914,7 +915,7 @@
             <span class="font-script text-2xl text-hcmou-light font-bold">♡ THANK YOU! ♡</span>
             <span class="w-12 h-[1px] bg-sky-200"></span>
           </div>
-          <p class="font-handwriting text-lg text-slate-500 mt-1 font-bold">
+          <p data-p="footerSee" class="font-handwriting text-lg text-slate-500 mt-1 font-bold">
             Hẹn gặp lại bạn tại Trường Đại học Mở TP.HCM nhé!
           </p>
         </div>
@@ -941,7 +942,7 @@
         class="w-16 h-16 rounded-full bg-sky-mist text-hcmou flex items-center justify-center mx-auto mb-3 shadow-inner">
         <i data-lucide="heart" class="w-8 h-8 text-rose-500 fill-rose-500 animate-bounce"></i>
       </div>
-      <h4 class="text-base font-bold text-hcmou font-montserrat">Cảm Ơn Bạn Rất Nhiều!</h4>
+      <h4 data-p="modalTitle" class="text-base font-bold text-hcmou font-montserrat">Cảm Ơn Bạn Rất Nhiều!</h4>
       <p id="rsvp-modal-text" class="text-xs text-slate-600 mt-2 leading-relaxed font-sans">
         Bích Phượng đã ghi nhận lời nhắn từ bạn rồi. Rất mong được gặp bạn trong ngày tốt nghiệp đại học nhé! ♡
       </p>
@@ -956,6 +957,108 @@
        JAVASCRIPT LOGIC
        ========================================== -->
   <script>
+    /* ------------------------------------------
+       0. THIỆP RIÊNG CHO GIA ĐÌNH (XƯNG HÔ THEO NGƯỜI NHẬN)
+       Link: index.html?to=<mã>  (vd: ?to=me). Không có ?to → bản bạn bè như cũ.
+       - you: cách gọi người nhận, self: bộ chữ xưng hô ('con' hoặc 'em')
+       ------------------------------------------ */
+    const RECIPIENTS = {
+      'me': { name: 'Mẹ', you: 'Mẹ', self: 'con' },
+      'anh-giap': { name: 'Anh Giáp', you: 'anh', self: 'em' },
+      'chi-yen': { name: 'Chị Yến', you: 'chị', self: 'em' },
+      'gia-dinh-puka': { name: 'Gia đình Puka', you: 'cả nhà', self: 'em' },
+      'anh-nghia-chi-thuy': { name: 'Anh Nghĩa & Chị Thủy', you: 'anh chị', self: 'em' }
+    };
+
+    // {you} = cách gọi người nhận, {You} = viết hoa đầu câu, {name} = tên đầy đủ, {guest} = tên trong form
+    const PRONOUN_TEXT = {
+      con: {
+        gutterThanks: 'Con cảm ơn {You} vì tất cả!',
+        envRecipient: 'Gửi {name} yêu của con ♡',
+        envQuote: '"Con cảm ơn {You} vì đã luôn thương yêu và là chỗ dựa vững chắc nhất của con!"',
+        letterTitle: 'Gửi {You} yêu của con ♡',
+        letterP1: 'Thấm thoát 4 năm dưới mái trường Đại học Mở TP.HCM đã trôi qua thật nhanh. Vậy là con đã chính thức cầm trên tay tấm bằng tốt nghiệp Ngành Ngôn ngữ Anh rồi {you} ơi!',
+        letterP2: 'Có được ngày hôm nay là nhờ {you} đã luôn thương yêu, chăm lo và tin tưởng con suốt chặng đường vừa qua. Ngày tốt nghiệp của con sẽ trọn vẹn nhất khi có {you} ở bên. Con mong {you} đến dự, cùng con chụp thật nhiều tấm hình kỷ niệm nha ♡',
+        letterSign: 'Con gái của {You},',
+        countdownSub: 'Sắp tới ngày vui của con rồi {you} ơi!',
+        calSub: '{You} nhớ đánh dấu ngày này giúp con nha ♡',
+        ceremonyDesc: 'Nghi thức trang trọng tại Hội trường A (Lầu 1). Con sẽ nhận bằng cử nhân trên sân khấu hội trường.',
+        mapSub: 'Cơ sở chính của trường con nè {you} ♡',
+        notesSub: 'Con dặn {you} vài điều nhỏ nha ♡',
+        noteFan: 'Buổi lễ sẽ khá đông và thời tiết có thể hơi oi bức, {you} nhớ mang theo quạt cầm tay nhỏ gọn để tránh nóng nha.',
+        noteLove: 'Và điều quan trọng nhất: {You} chỉ cần mang theo nụ cười thật tươi đến chung vui với con thôi! {You} có mặt là món quà lớn và ý nghĩa nhất với con rồi ♡',
+        noteParking: '{You} có thể gửi xe tại hầm xe trường (cổng 97 Võ Văn Tần) hoặc bãi giữ xe đối diện (số 96 Võ Văn Tần).',
+        rsvpSub: 'Để con chuẩn bị đón {you} chu đáo nhất nha ♡',
+        rsvpQ: '{You} có đến chung vui cùng con không?',
+        rsvpNo: '{You} bận mất rồi 🥺',
+        rsvpNameLabel: 'Người gửi: <span class="text-rose-500">*</span>',
+        supportText: 'Khi {you} đến nơi, {you} gọi các số dưới đây để được đón nha! 🤍',
+        footerBubble: '"{You} có mặt là niềm hạnh phúc lớn nhất của con trong ngày trọng đại này!" ♡',
+        footerSee: 'Con hẹn gặp {you} tại Trường Đại học Mở TP.HCM nha!',
+        modalTitle: 'Con cảm ơn {you} nhiều lắm!',
+        modalYes: 'Con đã nhận được xác nhận của <strong>{guest}</strong> rồi. Hẹn gặp {you} ở Lễ Tốt Nghiệp nha! ♡',
+        modalNo: 'Con tiếc lắm vì {you} bận, nhưng con cảm ơn <strong>{guest}</strong> đã gửi lời chúc cho con nha! ♡'
+      },
+      em: {
+        gutterThanks: 'Em cảm ơn {you} nhiều lắm!',
+        envRecipient: 'Kính gửi {name} ♡',
+        envQuote: '"Em cảm ơn {you} vì đã luôn thương và ở bên em!"',
+        letterTitle: 'Gửi {name} thương mến ♡',
+        letterP1: 'Thấm thoát 4 năm dưới mái trường Đại học Mở TP.HCM đã trôi qua thật nhanh. Vậy là em đã chính thức cầm trên tay tấm bằng tốt nghiệp Ngành Ngôn ngữ Anh rồi nè!',
+        letterP2: 'Ngày tốt nghiệp của em sẽ trọn vẹn và vui hơn biết bao khi có {you} cùng đến chung vui. Em rất mong {you} sắp xếp thời gian ghé dự, cùng em chụp thật nhiều tấm hình kỷ niệm nha ♡',
+        countdownSub: 'Sắp tới ngày vui của em rồi nè!',
+        calSub: '{You} nhớ đánh dấu lịch hẹn với em nha ♡',
+        ceremonyDesc: 'Nghi thức trang trọng tại Hội trường A (Lầu 1). Em sẽ nhận bằng cử nhân trên sân khấu hội trường.',
+        mapSub: 'Cơ sở chính của trường em nè ♡',
+        notesSub: 'Em gửi {you} vài lưu ý nhỏ nha ♡',
+        noteFan: 'Buổi lễ sẽ khá đông và thời tiết có thể hơi oi bức, {you} nhớ mang theo quạt cầm tay nhỏ gọn để tránh nóng nha.',
+        noteLove: 'Và điều quan trọng nhất: {You} chỉ cần mang theo nụ cười thật tươi đến chung vui với em thôi! Sự có mặt của {you} là món quà ý nghĩa nhất với em rồi ♡',
+        noteParking: '{You} có thể gửi xe tại hầm xe trường (cổng 97 Võ Văn Tần) hoặc bãi giữ xe đối diện (số 96 Võ Văn Tần).',
+        rsvpSub: 'Để em chuẩn bị đón {you} chu đáo nhất nha ♡',
+        rsvpQ: '{You} có đến chung vui cùng em không?',
+        rsvpNo: 'Tiếc quá, bận mất rồi 🥺',
+        rsvpNameLabel: 'Người gửi: <span class="text-rose-500">*</span>',
+        supportText: 'Khi {you} đến nơi, gọi các số dưới đây để được hỗ trợ nha! 🤍',
+        footerBubble: '"Sự có mặt của {you} là niềm vui lớn của em trong ngày trọng đại này!" ♡',
+        footerSee: 'Em hẹn gặp {you} tại Trường Đại học Mở TP.HCM nha!',
+        modalTitle: 'Em cảm ơn {you} nhiều lắm!',
+        modalYes: 'Em đã nhận được xác nhận của <strong>{guest}</strong> rồi. Hẹn gặp {you} ở Lễ Tốt Nghiệp nha! ♡',
+        modalNo: 'Em tiếc lắm vì {you} bận, nhưng em cảm ơn <strong>{guest}</strong> đã gửi lời chúc cho em nha! ♡'
+      }
+    };
+
+    const recipient = RECIPIENTS[new URLSearchParams(location.search).get('to')] || null;
+
+    // Trả về câu đã thay xưng hô, hoặc null nếu là bản bạn bè / không có câu này
+    function pronounText(key, extra = {}) {
+      if (!recipient) return null;
+      const tpl = PRONOUN_TEXT[recipient.self][key];
+      if (!tpl) return null;
+      const you = recipient.you;
+      return tpl
+        .replace(/\{You\}/g, you.charAt(0).toUpperCase() + you.slice(1))
+        .replace(/\{you\}/g, you)
+        .replace(/\{name\}/g, recipient.name)
+        .replace(/\{guest\}/g, extra.guest || '');
+    }
+
+    function applyRecipient() {
+      if (!recipient) return;
+      document.querySelectorAll('[data-p]').forEach(el => {
+        const text = pronounText(el.dataset.p);
+        if (text !== null) {
+          el.innerHTML = text;
+          el.classList.remove('hidden');
+        }
+      });
+      document.title = `Thư Mời Lễ Tốt Nghiệp - Bích Phượng gửi ${recipient.name}`;
+      // Điền sẵn tên người nhận vào form xác nhận (vẫn sửa được)
+      const nameInput = document.getElementById('rsvp-name');
+      nameInput.defaultValue = recipient.name;
+      nameInput.value = recipient.name;
+    }
+    applyRecipient();
+
     document.addEventListener("DOMContentLoaded", () => {
       lucide.createIcons();
       initCountdown();
@@ -1321,7 +1424,8 @@
       const modalText = document.getElementById('rsvp-modal-text');
 
       if (status === 'yes') {
-        modalText.innerHTML = `Tuyệt vời quá! Bích Phượng đã lưu lại thông tin của <strong>${escapeHtml(name)}</strong>. Hẹn gặp bạn tại ngày Lễ Tốt Nghiệp HCMOU nhé! ♡`;
+        modalText.innerHTML = pronounText('modalYes', { guest: escapeHtml(name) }) ||
+          `Tuyệt vời quá! Bích Phượng đã lưu lại thông tin của <strong>${escapeHtml(name)}</strong>. Hẹn gặp bạn tại ngày Lễ Tốt Nghiệp HCMOU nhé! ♡`;
         if (typeof confetti === 'function') {
           confetti({
             particleCount: 80,
@@ -1330,7 +1434,8 @@
           });
         }
       } else {
-        modalText.innerHTML = `Bích Phượng rất tiếc vì bạn bận việc, nhưng cảm ơn <strong>${escapeHtml(name)}</strong> đã gửi lời chia sẻ và chúc mừng nhé! ♡`;
+        modalText.innerHTML = pronounText('modalNo', { guest: escapeHtml(name) }) ||
+          `Bích Phượng rất tiếc vì bạn bận việc, nhưng cảm ơn <strong>${escapeHtml(name)}</strong> đã gửi lời chia sẻ và chúc mừng nhé! ♡`;
       }
 
       modal.classList.remove('hidden');
