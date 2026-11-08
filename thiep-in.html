@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thiệp In – Lễ Tốt Nghiệp Bích Phượng</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&family=Montserrat:wght@700;800;900&family=Patrick+Hand&family=Great+Vibes&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      background: #c5dff8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px 16px;
+      font-family: 'Be Vietnam Pro', sans-serif;
+    }
+
+    .card {
+      width: 380px;
+      background: linear-gradient(160deg, #f0f8ff 0%, #e8f4fd 40%, #f6fafd 100%);
+      border: 2.5px solid #BAE0FD;
+      border-radius: 20px;
+      padding: 36px 32px 28px;
+      position: relative;
+      box-shadow: 0 8px 40px rgba(0,61,122,0.13), 0 2px 8px rgba(0,61,122,0.07);
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: -40px; left: -40px;
+      width: 130px; height: 130px;
+      background: radial-gradient(circle, rgba(186,224,253,0.55) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .card::after {
+      content: '';
+      position: absolute;
+      bottom: -40px; right: -40px;
+      width: 130px; height: 130px;
+      background: radial-gradient(circle, rgba(186,224,253,0.45) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .top-deco {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      margin-bottom: 18px;
+    }
+    .top-deco span {
+      display: inline-block;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #BAE0FD;
+    }
+    .top-deco span:nth-child(3) {
+      background: #D4AF37;
+      width: 8px; height: 8px;
+    }
+
+    .title-block {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .label-top {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #0052A3;
+      margin-bottom: 6px;
+    }
+    .title-main {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 28px;
+      font-weight: 900;
+      color: #003D7A;
+      line-height: 1.15;
+      text-transform: uppercase;
+    }
+    .title-sub {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #003D7A;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-top: 2px;
+      opacity: 0.75;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 14px 0;
+    }
+    .divider-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #BAE0FD, transparent);
+    }
+    .divider-star { font-size: 13px; color: #D4AF37; }
+
+    .cap-area {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 16px;
+      position: relative;
+    }
+    .cap-circle {
+      width: 110px; height: 110px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #BAE0FD 0%, #daeffe 60%, transparent 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 64px;
+    }
+    .leaf-left, .leaf-right {
+      position: absolute;
+      top: 50%; transform: translateY(-50%);
+      font-size: 22px;
+      opacity: 0.5;
+    }
+    .leaf-left { left: 20px; }
+    .leaf-right { right: 20px; transform: translateY(-50%) scaleX(-1); }
+
+    .name-block {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .name-label {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #4A6B82;
+      margin-bottom: 4px;
+    }
+    .name-main {
+      font-family: 'Great Vibes', cursive;
+      font-size: 30px;
+      color: #003D7A;
+      line-height: 1.2;
+    }
+    .name-info {
+      font-size: 10px;
+      color: #4A6B82;
+      margin-top: 3px;
+      font-weight: 500;
+    }
+
+    .date-badge {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: #003D7A;
+      color: white;
+      border-radius: 12px;
+      padding: 9px 16px;
+      margin-bottom: 16px;
+    }
+    .date-badge .icon { font-size: 14px; }
+    .date-text {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      font-weight: 800;
+    }
+    .date-sub {
+      font-size: 9px;
+      font-weight: 400;
+      opacity: 0.8;
+      margin-top: 1px;
+      display: block;
+    }
+
+    .qr-section {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .qr-label {
+      font-size: 10px;
+      color: #4A6B82;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .qr-label::before, .qr-label::after {
+      content: '✦';
+      color: #BAE0FD;
+      font-size: 8px;
+    }
+    .qr-wrap {
+      display: inline-block;
+      background: white;
+      border: 2px solid #BAE0FD;
+      border-radius: 14px;
+      padding: 10px;
+      box-shadow: 0 2px 12px rgba(0,61,122,0.08);
+    }
+    #qr-canvas { display: block; border-radius: 6px; }
+
+    .contact-section { margin-top: 4px; }
+    .contact-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    .contact-line { flex: 1; height: 1px; background: #BAE0FD; }
+    .contact-title {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #4A6B82;
+      white-space: nowrap;
+    }
+    .contact-row {
+      display: flex;
+      align-items: center;
+      padding: 7px 10px;
+      border-radius: 10px;
+      margin-bottom: 5px;
+      background: rgba(186,224,253,0.25);
+    }
+    .contact-icon { font-size: 13px; margin-right: 8px; flex-shrink: 0; }
+    .contact-name {
+      font-family: 'Patrick Hand', cursive;
+      font-size: 13px;
+      color: #003D7A;
+      font-weight: 700;
+      min-width: 90px;
+    }
+    .contact-phone {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      color: #003D7A;
+      font-weight: 700;
+      margin-left: auto;
+    }
+
+    .bottom-deco {
+      text-align: center;
+      margin-top: 16px;
+      font-family: 'Great Vibes', cursive;
+      font-size: 16px;
+      color: #BAE0FD;
+    }
+
+    .print-hint {
+      text-align: center;
+      margin-top: 24px;
+      font-size: 12px;
+      color: #5a7fa0;
+      font-family: 'Be Vietnam Pro', sans-serif;
+    }
+    .print-hint button {
+      display: block;
+      margin: 10px auto 0;
+      background: #003D7A;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      padding: 10px 28px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      box-shadow: 0 3px 12px rgba(0,61,122,0.25);
+    }
+    .print-hint button:hover { background: #0052A3; }
+
+    @media print {
+      body { background: white; padding: 0; }
+      .print-hint { display: none; }
+      .card { border-radius: 0; box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <div class="card">
+      <div class="top-deco">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+
+      <div class="title-block">
+        <div class="label-top">✦ Trường Đại học Mở TP.HCM ✦</div>
+        <div class="title-main">THIỆP MỜI</div>
+        <div class="title-sub">Lễ Tốt Nghiệp 2026</div>
+      </div>
+
+      <div class="divider">
+        <div class="divider-line"></div>
+        <span class="divider-star">✦</span>
+        <div class="divider-line"></div>
+      </div>
+
+      <div class="cap-area">
+        <span class="leaf-left">🌿</span>
+        <div class="cap-circle">🎓</div>
+        <span class="leaf-right">🌿</span>
+      </div>
+
+      <div class="name-block">
+        <div class="name-label">Tân Cử Nhân</div>
+        <div class="name-main">Nguyễn Thị Bích Phượng</div>
+        <div class="name-info">Ngành Ngôn ngữ Anh &nbsp;•&nbsp; Khóa 2022 – 2026</div>
+      </div>
+
+      <div class="date-badge">
+        <span class="icon">📅</span>
+        <div>
+          <div class="date-text">Chủ Nhật, 22 / 11 / 2026</div>
+          <span class="date-sub">Buổi sáng &nbsp;07:30 – 11:30</span>
+        </div>
+      </div>
+
+      <div class="qr-section">
+        <div class="qr-label">Quét mã QR để xem thiệp online</div>
+        <div class="qr-wrap">
+          <canvas id="qr-canvas"></canvas>
+        </div>
+      </div>
+
+      <div class="divider">
+        <div class="divider-line"></div>
+        <span style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#4A6B82;white-space:nowrap;font-family:'Be Vietnam Pro',sans-serif;">LIÊN HỆ KHI ĐẾN DỰ</span>
+        <div class="divider-line"></div>
+      </div>
+
+      <div class="contact-section">
+        <div class="contact-row">
+          <span class="contact-icon">🌿</span>
+          <span class="contact-name">Bé Trúc</span>
+          <span class="contact-phone">0862 225 991</span>
+        </div>
+        <div class="contact-row">
+          <span class="contact-icon">☀️</span>
+          <span class="contact-name">Bé Dương</span>
+          <span class="contact-phone">0392 963 126</span>
+        </div>
+        <div class="contact-row">
+          <span class="contact-icon">🎓</span>
+          <span class="contact-name">Bích Phượng</span>
+          <span class="contact-phone">0383 715 110</span>
+        </div>
+      </div>
+
+      <div class="bottom-deco">♡ Thank you for coming ♡</div>
+    </div>
+
+    <div class="print-hint">
+      <div>Mở file này bằng trình duyệt → Chụp màn hình hoặc in</div>
+      <button onclick="window.print()">🖨️ In Thiệp</button>
+    </div>
+  </div>
+
+  <script>
+    QRCode.toCanvas(document.getElementById('qr-canvas'),
+      'https://quocbao2406.github.io/thiep-tot-nghiep-bich-phuong/', {
+        width: 160,
+        margin: 1,
+        color: { dark: '#003D7A', light: '#FFFFFF' }
+      }
+    );
+  </script>
+</body>
+</html>
