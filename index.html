@@ -559,8 +559,8 @@
             <div>
               <p class="text-xs uppercase font-bold text-slate-400 tracking-wider">NGÀY CỬ HÀNH LỄ</p>
               <h4 class="text-base sm:text-lg font-extrabold text-hcmou font-montserrat">Chủ Nhật, 22/11/2026</h4>
-              <p class="text-xs text-slate-600 mt-0.5"><strong class="text-rose-600">Sáng 09:00 - 11:00:</strong> Chụp ảnh</p>
-              <p class="text-xs text-slate-500">Chiều 13:00 - 17:00: Lễ tốt nghiệp</p>
+              <p id="date-line-1" class="text-xs text-slate-600 mt-0.5"><strong class="text-rose-600">Sáng 09:00 - 11:00:</strong> Chụp ảnh</p>
+              <p id="date-line-2" class="text-xs text-slate-500">Chiều 13:00 - 17:00: Lễ tốt nghiệp</p>
             </div>
           </div>
           <div class="font-handwriting text-hcmou-light font-bold text-2xl rotate-6 text-right">
@@ -569,16 +569,16 @@
         </div>
 
         <!-- Detailed Timeline Cards -->
-        <div class="grid grid-cols-1 gap-3">
+        <div id="timeline-cards" class="grid grid-cols-1 gap-3">
           <!-- Timeline Card: Chụp ảnh buổi sáng (nổi bật – giờ hẹn khách mời) -->
-          <div
+          <div id="photo-card"
             class="photo-card bg-white rounded-2xl p-4 shadow-sm relative overflow-hidden">
             <div class="w-2 h-full bg-hcmou absolute left-0 top-0"></div>
             <div class="pl-3">
               <div class="flex items-center justify-between gap-2">
                 <span
                   class="text-sm font-extrabold text-white tracking-wider font-montserrat bg-hcmou px-3 py-1 rounded-full shadow-sm">
-                  ☀️ 09:00 - 11:00 SÁNG
+                  <span id="photo-time">☀️ 09:00 - 11:00 SÁNG</span>
                 </span>
                 <span
                   class="text-[10px] font-bold text-rose-600 uppercase tracking-wider bg-rose-100 px-2 py-0.5 rounded-full animate-pulse-soft shrink-0">
@@ -594,14 +594,14 @@
           </div>
 
           <!-- Timeline Card: Ceremony -->
-          <div
+          <div id="ceremony-card"
             class="bg-white rounded-2xl p-4 border border-sky-100 shadow-sm relative overflow-hidden group hover:border-hcmou transition-colors">
             <div class="w-2 h-full bg-hcmou absolute left-0 top-0"></div>
             <div class="pl-3">
               <div class="flex items-center justify-between">
                 <span
                   class="text-[11px] font-bold text-hcmou uppercase tracking-wider font-montserrat bg-sky-mist px-2.5 py-0.5 rounded-full">
-                  13:00 - 17:00 CHIỀU
+                  <span id="ceremony-time">13:00 - 17:00 CHIỀU</span>
                 </span>
                 <i data-lucide="graduation-cap" class="w-4 h-4 text-hcmou"></i>
               </div>
@@ -1033,7 +1033,7 @@
         countdownSub: 'Sắp tới ngày vui của con rồi {you} ơi!',
         calSub: '{You} nhớ đánh dấu ngày này giúp con nha ♡',
         ceremonyDesc: 'Nghi thức trang trọng tại Hội trường A (Lầu 6). Con sẽ nhận bằng cử nhân trên sân khấu hội trường.',
-        photoDesc: 'Khung giờ con hẹn {you} đến tặng hoa, chụp ảnh kỷ niệm và chúc mừng cùng con. {You} nhớ đến vào <strong class="text-hcmou">buổi sáng</strong> nha!',
+        photoDesc: 'Khung giờ con hẹn {you} đến tặng hoa, chụp ảnh kỷ niệm và chúc mừng cùng con. {You} nhớ đến lúc <strong class="text-hcmou">16:00 chiều</strong> nha!',
         mapSub: 'Cơ sở chính của trường con nè {you} ♡',
         notesSub: 'Con dặn {you} vài điều nhỏ nha ♡',
         noteFan: 'Buổi lễ sẽ khá đông và thời tiết có thể hơi oi bức, {you} nhớ mang theo quạt cầm tay nhỏ gọn để tránh nóng nha.',
@@ -1060,7 +1060,7 @@
         countdownSub: 'Sắp tới ngày vui của em rồi nè!',
         calSub: '{You} nhớ đánh dấu lịch hẹn với em nha ♡',
         ceremonyDesc: 'Nghi thức trang trọng tại Hội trường A (Lầu 6). Em sẽ nhận bằng cử nhân trên sân khấu hội trường.',
-        photoDesc: 'Khung giờ em hẹn {you} đến tặng hoa, chụp ảnh kỷ niệm và chúc mừng cùng em. {You} nhớ đến vào <strong class="text-hcmou">buổi sáng</strong> nha!',
+        photoDesc: 'Khung giờ em hẹn {you} đến tặng hoa, chụp ảnh kỷ niệm và chúc mừng cùng em. {You} nhớ đến lúc <strong class="text-hcmou">16:00 chiều</strong> nha!',
         mapSub: 'Cơ sở chính của trường em nè ♡',
         notesSub: 'Em gửi {you} vài lưu ý nhỏ nha ♡',
         noteFan: 'Buổi lễ sẽ khá đông và thời tiết có thể hơi oi bức, {you} nhớ mang theo quạt cầm tay nhỏ gọn để tránh nóng nha.',
@@ -1088,7 +1088,7 @@
         countdownSub: 'Sắp tới ngày vui của dì rồi nè!',
         calSub: '{You} nhớ đánh dấu lịch hẹn với dì nha ♡',
         ceremonyDesc: 'Nghi thức trang trọng tại Hội trường A (Lầu 6). Dì sẽ nhận bằng cử nhân trên sân khấu hội trường.',
-        photoDesc: 'Khung giờ dì hẹn {you} đến tặng hoa, chụp ảnh kỷ niệm và chúc mừng cùng dì. {You} nhớ đến vào <strong class="text-hcmou">buổi sáng</strong> nha!',
+        photoDesc: 'Khung giờ dì hẹn {you} đến tặng hoa, chụp ảnh kỷ niệm và chúc mừng cùng dì. {You} nhớ đến lúc <strong class="text-hcmou">16:00 chiều</strong> nha!',
         mapSub: 'Cơ sở chính của trường dì nè ♡',
         notesSub: 'Dì gửi {you} vài lưu ý nhỏ nha ♡',
         noteFan: 'Buổi lễ sẽ khá đông và thời tiết có thể hơi oi bức, {you} nhớ mang theo quạt cầm tay nhỏ gọn để tránh nóng nha.',
@@ -1155,6 +1155,36 @@
         .replace(/\{guest\}/g, extra.guest || '');
     }
 
+    /*
+     * LỊCH RIÊNG CHO GIA ĐÌNH (xưng con / em / dì):
+     * Lễ 13:00–16:00 lên trước (thẻ thường), chụp ảnh tri ân 16:00–17:00 xuống dưới (thẻ nổi bật).
+     * Bạn bè giữ lịch chụp ảnh buổi sáng 09:00–11:00.
+     */
+    const FAMILY_SELF = ['con', 'em', 'di'];
+    let countdownTarget = '2026-11-22T09:00:00+07:00';
+
+    function applyFamilySchedule() {
+      document.getElementById('date-line-1').innerHTML = 'Chiều 13:00 - 16:00: Lễ tốt nghiệp';
+      document.getElementById('date-line-1').className = 'text-xs text-slate-500 mt-0.5';
+      document.getElementById('date-line-2').innerHTML = '<strong class="text-rose-600">16:00 - 17:00:</strong> Chụp ảnh tri ân';
+      document.getElementById('date-line-2').className = 'text-xs text-slate-600';
+
+      document.getElementById('ceremony-time').textContent = '13:00 - 16:00 CHIỀU';
+      document.getElementById('photo-time').textContent = '📸 16:00 - 17:00 CHIỀU';
+
+      // Đôn thẻ lễ lên trên, thẻ chụp ảnh nổi bật xuống dưới
+      const cards = document.getElementById('timeline-cards');
+      cards.insertBefore(document.getElementById('ceremony-card'), document.getElementById('photo-card'));
+
+      countdownTarget = '2026-11-22T16:00:00+07:00';
+
+      const cal = document.getElementById('add-google-cal-btn');
+      const url = new URL(cal.href);
+      url.searchParams.set('dates', '20261122T090000Z/20261122T100000Z');
+      url.searchParams.set('text', 'Chụp ảnh tri ân & mừng tốt nghiệp - Bích Phượng (16h-17h chiều) | HCMOU');
+      cal.href = url.toString();
+    }
+
     function applyRecipient() {
       if (!recipient) return;
       document.querySelectorAll('[data-p]').forEach(el => {
@@ -1167,6 +1197,7 @@
         }
       });
       document.title = `Thư Mời Lễ Tốt Nghiệp - Bích Phượng gửi ${recipient.name}`;
+      if (FAMILY_SELF.includes(recipient.self)) applyFamilySchedule();
       // Điền sẵn tên người nhận vào form xác nhận (vẫn sửa được)
       const nameInput = document.getElementById('rsvp-name');
       nameInput.defaultValue = recipient.formName || recipient.name;
@@ -1406,7 +1437,7 @@
        3. COUNTDOWN TIMER
        ------------------------------------------ */
     function initCountdown() {
-      const eventDate = new Date("2026-11-22T09:00:00+07:00").getTime();
+      const eventDate = new Date(countdownTarget).getTime();
 
       function updateTimer() {
         const now = new Date().getTime();
