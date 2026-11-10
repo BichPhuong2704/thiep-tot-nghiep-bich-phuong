@@ -1004,8 +1004,8 @@
     const RECIPIENTS = {
       'me': { name: 'Mẹ', you: 'Mẹ', self: 'con' },
       'anh-giap': { name: 'Anh Giáp', you: 'anh', self: 'em' },
-      'chi-yen': { name: 'Chị Yến', you: 'chị', self: 'em' },
-      'gia-dinh-puka': { name: 'Gia đình Puka', you: 'cả nhà', self: 'em' },
+      'chi-yen': { name: 'Gia đình chị Yến', you: 'anh chị', self: 'em' },
+      'gia-dinh-puka': { name: 'Gia đình Puka', you: 'cả nhà', self: 'di' },
       'anh-nghia-chi-thuy': { name: 'Anh Nghĩa & Chị Thủy', you: 'anh chị', self: 'em' },
 
       // Bạn bè: giữ xưng "mình – bạn" như bản gốc, chỉ thêm tên người nhận
@@ -1076,6 +1076,34 @@
         modalYes: 'Em đã nhận được xác nhận của <strong>{guest}</strong> rồi. Hẹn gặp {you} ở Lễ Tốt Nghiệp nha! ♡',
         modalNo: 'Em tiếc lắm vì {you} bận, nhưng em cảm ơn <strong>{guest}</strong> đã gửi lời chúc cho em nha! ♡'
       },
+      // Bộ "dì": Phượng vai lớn hơn, xưng "dì". Câu để '' là ẩn hẳn câu đó.
+      di: {
+        gutterThanks: 'Dì cảm ơn {you} nhiều lắm!',
+        envRecipient: 'Gửi {name} ♡',
+        envQuote: '',
+        letterTitle: 'Gửi {name} ♡',
+        letterP1: 'Thấm thoát 4 năm dưới mái trường Đại học Mở TP.HCM đã trôi qua thật nhanh. Vậy là dì đã chính thức cầm trên tay tấm bằng tốt nghiệp Ngành Ngôn ngữ Anh rồi nè!',
+        letterP2: 'Ngày tốt nghiệp của dì sẽ trọn vẹn và vui hơn biết bao khi có {you} cùng đến chung vui. Dì rất mong {you} sắp xếp thời gian ghé dự, cùng dì chụp thật nhiều tấm hình kỷ niệm nha ♡',
+        countdownSub: 'Sắp tới ngày vui của dì rồi nè!',
+        calSub: '{You} nhớ đánh dấu lịch hẹn với dì nha ♡',
+        ceremonyDesc: 'Nghi thức trang trọng tại Hội trường A (Lầu 6). Dì sẽ nhận bằng cử nhân trên sân khấu hội trường.',
+        photoDesc: 'Khung giờ dì hẹn {you} đến tặng hoa, chụp ảnh kỷ niệm và chúc mừng cùng dì. {You} nhớ đến vào <strong class="text-hcmou">buổi sáng</strong> nha!',
+        mapSub: 'Cơ sở chính của trường dì nè ♡',
+        notesSub: 'Dì gửi {you} vài lưu ý nhỏ nha ♡',
+        noteFan: 'Buổi lễ sẽ khá đông và thời tiết có thể hơi oi bức, {you} nhớ mang theo quạt cầm tay nhỏ gọn để tránh nóng nha.',
+        noteLove: 'Và điều quan trọng nhất: {You} chỉ cần mang theo nụ cười thật tươi đến chung vui với dì thôi! Sự có mặt của {you} là món quà ý nghĩa nhất với dì rồi ♡',
+        noteParking: '{You} có thể gửi xe tại nhà xe Võ Văn Tần, bãi giữ xe Công viên Tao Đàn hoặc một số điểm giữ xe gần cổng trường.',
+        rsvpSub: 'Để dì chuẩn bị đón {you} chu đáo nhất nha ♡',
+        rsvpQ: '{You} có đến chung vui cùng dì không?',
+        rsvpNo: 'Tiếc quá, bận mất rồi 🥺',
+        rsvpNameLabel: 'Người gửi: <span class="text-rose-500">*</span>',
+        supportText: 'Khi {you} đến nơi, gọi các số dưới đây để được hỗ trợ nha! 🤍',
+        footerBubble: '"Sự có mặt của {you} là niềm vui lớn của dì trong ngày trọng đại này!" ♡',
+        footerSee: 'Dì hẹn gặp {you} tại Trường Đại học Mở TP.HCM nha!',
+        modalTitle: 'Dì cảm ơn {you} nhiều lắm!',
+        modalYes: 'Dì đã nhận được xác nhận của <strong>{guest}</strong> rồi. Hẹn gặp {you} ở Lễ Tốt Nghiệp nha! ♡',
+        modalNo: 'Dì tiếc lắm vì {you} bận, nhưng dì cảm ơn <strong>{guest}</strong> đã gửi lời chúc cho dì nha! ♡'
+      },
       // Bộ "bạn": câu nào không có ở đây thì giữ nguyên chữ của bản bạn bè gốc
       ban: {
         envRecipient: 'Gửi {name} ♡',
@@ -1089,7 +1117,7 @@
     function pronounText(key, extra = {}) {
       if (!recipient) return null;
       const tpl = PRONOUN_TEXT[recipient.self][key];
-      if (!tpl) return null;
+      if (tpl === undefined) return null;
       const you = recipient.you;
       return tpl
         .replace(/\{You\}/g, you.charAt(0).toUpperCase() + you.slice(1))
@@ -1102,7 +1130,9 @@
       if (!recipient) return;
       document.querySelectorAll('[data-p]').forEach(el => {
         const text = pronounText(el.dataset.p);
-        if (text !== null) {
+        if (text === '') {
+          el.classList.add('hidden'); // câu để trống = ẩn
+        } else if (text !== null) {
           el.innerHTML = text;
           el.classList.remove('hidden');
         }
