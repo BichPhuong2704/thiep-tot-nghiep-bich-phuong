@@ -875,7 +875,10 @@
             <!-- Submit RSVP -->
             <button type="submit" id="rsvp-submit-btn"
               class="w-full mt-4 py-3 px-4 rounded-xl bg-gradient-to-r from-hcmou to-hcmou-light text-white font-montserrat font-bold text-xs uppercase tracking-wider shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 disabled:opacity-75 disabled:cursor-not-allowed">
-              <i data-lucide="heart-handshake" id="rsvp-btn-icon" class="w-4 h-4"></i>
+              <!-- 3 icon có sẵn, chỉ bật/tắt (không vẽ lại icon để tránh kẹt vòng xoay) -->
+              <span data-btn-icon="idle" class="flex"><i data-lucide="heart-handshake" class="w-4 h-4"></i></span>
+              <span data-btn-icon="loading" class="hidden"><i data-lucide="loader-2" class="w-4 h-4 animate-spin"></i></span>
+              <span data-btn-icon="done" class="hidden"><i data-lucide="check" class="w-4 h-4"></i></span>
               <span id="rsvp-btn-text">Gửi Xác Nhận Tham Dự</span>
             </button>
           </form>
@@ -1500,18 +1503,8 @@
 
       if (!name) return;
 
-      const submitBtn = document.getElementById('rsvp-submit-btn');
-      const btnText = document.getElementById('rsvp-btn-text');
-      const btnIcon = document.getElementById('rsvp-btn-icon');
-
       // Hiển thị trạng thái đang gửi trên nút
-      if (submitBtn) {
-        submitBtn.disabled = true;
-        if (btnText) btnText.innerText = "Đang gửi xác nhận...";
-        if (btnIcon) btnIcon.setAttribute('data-lucide', 'loader-2');
-        if (window.lucide) lucide.createIcons();
-        submitBtn.querySelector('[data-lucide="loader-2"]')?.classList.add('animate-spin');
-      }
+      setRsvpButton('loading');
 
       const now = new Date();
       // Định dạng ngày giờ Việt Nam (GMT+7)
@@ -1557,13 +1550,8 @@
         }
       }
 
-      // Khôi phục lại nút bấm
-      if (submitBtn) {
-        submitBtn.disabled = false;
-        if (btnText) btnText.innerText = "Gửi Xác Nhận Tham Dự";
-        if (btnIcon) btnIcon.setAttribute('data-lucide', 'heart-handshake');
-        if (window.lucide) lucide.createIcons();
-      }
+      // Nút chuyển sang "Đã gửi" để khách biết đã gửi xong
+      setRsvpButton('done');
 
       // 3. Hiển thị modal thông báo và pháo hoa
       const modal = document.getElementById('rsvp-modal');
@@ -1591,6 +1579,34 @@
     function closeRsvpModal() {
       document.getElementById('rsvp-modal').classList.add('hidden');
     }
+
+    /* Trạng thái nút gửi: 'idle' (chưa gửi) | 'loading' (đang gửi) | 'done' (đã gửi) */
+    const RSVP_BTN_TEXT = {
+      idle: 'Gửi Xác Nhận Tham Dự',
+      loading: 'Đang gửi xác nhận...',
+      done: 'Đã gửi xác nhận ♡'
+    };
+
+    function setRsvpButton(state) {
+      const btn = document.getElementById('rsvp-submit-btn');
+      btn.disabled = state === 'loading';
+      document.getElementById('rsvp-btn-text').textContent = RSVP_BTN_TEXT[state];
+      btn.querySelectorAll('[data-btn-icon]').forEach(el => {
+        el.classList.toggle('hidden', el.dataset.btnIcon !== state);
+        el.classList.toggle('flex', el.dataset.btnIcon === state);
+      });
+      // "Đã gửi" đổi sang nền xanh lá cho dễ nhận ra
+      btn.classList.toggle('from-emerald-600', state === 'done');
+      btn.classList.toggle('to-emerald-500', state === 'done');
+      btn.classList.toggle('from-hcmou', state !== 'done');
+      btn.classList.toggle('to-hcmou-light', state !== 'done');
+    }
+
+    // Khách sửa lại form sau khi đã gửi → nút trở về "Gửi Xác Nhận Tham Dự" để gửi lại
+    document.getElementById('rsvp-form').addEventListener('input', () => {
+      const text = document.getElementById('rsvp-btn-text').textContent;
+      if (text === RSVP_BTN_TEXT.done) setRsvpButton('idle');
+    });
 
     /* ------------------------------------------
        5. GỌI ĐIỆN & TỰ ĐỘNG SAO CHÉP SỐ ĐIỆN THOẠI
