@@ -90,7 +90,8 @@
       await document.fonts.load('700 20px "Be Vietnam Pro"');
       await document.fonts.ready;
       const logo = await new Promise(r => { const i = new Image(); i.onload = () => r(i); i.onerror = () => r(null); i.src = '../logo-truong.png'; });
-      const list = await (await fetch('og-recipients.json?v=' + Date.now())).json();
+      const only = new URLSearchParams(location.search).get('only'); // ?only=<mã> để chỉ vẽ 1 người
+      const list = (await (await fetch('og-recipients.json?v=' + Date.now())).json()).filter(i => !only || i.slug === only);
       const out = document.getElementById('out');
       let saved = 0;
       for (const item of list) {
