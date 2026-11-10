@@ -15,7 +15,7 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.join(__dirname, '..');
-const BASE_URL = 'https://quocbao2406.github.io/thiep-tot-nghiep-bich-phuong';
+const BASE_URL = 'https://bichphuong2704.github.io/thiep-tot-nghiep-bich-phuong';
 const IMG_VERSION = 1; // tăng số này khi vẽ lại ảnh để Zalo/Messenger lấy ảnh mới
 
 const html = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
