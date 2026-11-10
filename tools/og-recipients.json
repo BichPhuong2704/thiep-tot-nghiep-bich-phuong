@@ -1,0 +1,72 @@
+[
+  {
+    "slug": "chung",
+    "greet": "Gửi bạn bè & người thân ♡",
+    "imgTime": "Chụp ảnh 09:00 – 11:00 sáng"
+  },
+  {
+    "slug": "me",
+    "greet": "Gửi Mẹ yêu của con ♡",
+    "imgTime": "Chụp ảnh 09:00 – 11:00 sáng"
+  },
+  {
+    "slug": "anh-giap",
+    "greet": "Gửi Anh Giáp ♡",
+    "imgTime": "Chụp ảnh tri ân 16:00 – 17:00 chiều"
+  },
+  {
+    "slug": "chi-yen",
+    "greet": "Gửi Anh Chị ♡",
+    "imgTime": "Chụp ảnh tri ân 16:00 – 17:00 chiều"
+  },
+  {
+    "slug": "gia-dinh-puka",
+    "greet": "Gửi Gia đình Puka ♡",
+    "imgTime": "Chụp ảnh tri ân 16:00 – 17:00 chiều"
+  },
+  {
+    "slug": "anh-nghia-chi-thuy",
+    "greet": "Gửi Anh Nghĩa & Chị Thủy ♡",
+    "imgTime": "Chụp ảnh tri ân 16:00 – 17:00 chiều"
+  },
+  {
+    "slug": "minh-truc",
+    "greet": "Gửi Bé Trúc ♡",
+    "imgTime": "Chụp ảnh 09:00 – 11:00 sáng"
+  },
+  {
+    "slug": "thuy-duong",
+    "greet": "Gửi Bé Dương ♡",
+    "imgTime": "Chụp ảnh 09:00 – 11:00 sáng"
+  },
+  {
+    "slug": "thuy-tien",
+    "greet": "Gửi Thủy Tiên ♡",
+    "imgTime": "Chụp ảnh 09:00 – 11:00 sáng"
+  },
+  {
+    "slug": "tra-my",
+    "greet": "Gửi Trà My ♡",
+    "imgTime": "Chụp ảnh 09:00 – 11:00 sáng"
+  },
+  {
+    "slug": "nhu-hang",
+    "greet": "Gửi Như Hằng ♡",
+    "imgTime": "Chụp ảnh 09:00 – 11:00 sáng"
+  },
+  {
+    "slug": "ngoc-hoa",
+    "greet": "Gửi Ngọc Hòa ♡",
+    "imgTime": "Chụp ảnh 09:00 – 11:00 sáng"
+  },
+  {
+    "slug": "hong-nhung",
+    "greet": "Gửi Hồng Nhung ♡",
+    "imgTime": "Chụp ảnh 09:00 – 11:00 sáng"
+  },
+  {
+    "slug": "mai-phuong",
+    "greet": "Gửi Mai Phương ♡",
+    "imgTime": "Chụp ảnh 09:00 – 11:00 sáng"
+  }
+]
