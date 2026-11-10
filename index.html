@@ -999,12 +999,13 @@
     /* ------------------------------------------
        0. THIỆP RIÊNG CHO GIA ĐÌNH (XƯNG HÔ THEO NGƯỜI NHẬN)
        Link: index.html?to=<mã>  (vd: ?to=me). Không có ?to → bản bạn bè như cũ.
-       - you: cách gọi người nhận, self: bộ chữ xưng hô ('con' hoặc 'em')
+       - you: cách gọi người nhận, self: bộ chữ xưng hô ('con' / 'em' / 'di' / 'ban')
+       - formName (tùy chọn): tên điền sẵn ở form xác nhận, nếu khác name
        ------------------------------------------ */
     const RECIPIENTS = {
       'me': { name: 'Mẹ', you: 'Mẹ', self: 'con' },
       'anh-giap': { name: 'Anh Giáp', you: 'anh', self: 'em' },
-      'chi-yen': { name: 'Gia đình chị Yến', you: 'anh chị', self: 'em' },
+      'chi-yen': { name: 'Anh Chị', you: 'anh chị', self: 'em', formName: 'Gia đình chị Yến' },
       'gia-dinh-puka': { name: 'Gia đình Puka', you: 'cả nhà', self: 'di' },
       'anh-nghia-chi-thuy': { name: 'Anh Nghĩa & Chị Thủy', you: 'anh chị', self: 'em' },
 
@@ -1140,8 +1141,8 @@
       document.title = `Thư Mời Lễ Tốt Nghiệp - Bích Phượng gửi ${recipient.name}`;
       // Điền sẵn tên người nhận vào form xác nhận (vẫn sửa được)
       const nameInput = document.getElementById('rsvp-name');
-      nameInput.defaultValue = recipient.name;
-      nameInput.value = recipient.name;
+      nameInput.defaultValue = recipient.formName || recipient.name;
+      nameInput.value = nameInput.defaultValue;
     }
     applyRecipient();
 
